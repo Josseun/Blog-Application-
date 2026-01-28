@@ -1,52 +1,26 @@
 <template>
-  <div>
-    <div class="">
-      <h1 class="">404</h1>
-      <h2>Page Not Found</h2>
-      <p>The page you're looking for doesn't exist or has been moved.</p>
-      <div class="">
-        <router-link to="/" class="btn-primary">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-            />
-          </svg>
+  <div class="w-full h-full min-h-100 justify-center flex items-center">
+    <div class="flex flex-col gap-2 items-center justify-center">
+      <h1 class="text-8xl font-black font-sans">404</h1>
+      <h2 class="text-red-600 text-xl">Page Not Found</h2>
+      <p class="text-lg">The page you're looking for doesn't exist or has been moved.</p>
+      <div class="flex gap-4 justify-center items-center">
+        <router-link to="/" class="flex items-center hover:underline hover:text-blue-700">
+       <Icon icon="material-symbols-light:home-rounded" width="24" height="24" />
           Go Home
         </router-link>
-        <button @click="goBack" class="">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </svg>
+        <button @click="goBack" class="flex items-center hover:underline hover:text-blue-700">
+         
           Go Back
         </button>
       </div>
     </div>
-    <svg
-      class="background-svg"
-      viewBox="0 0 1200 800"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0,400 Q300,200 600,400 T1200,400 L1200,800 L0,800 Z"
-        fill="rgba(59, 130, 246, 0.05)"
-      />
-      <path
-        d="M0,500 Q300,300 600,500 T1200,500 L1200,800 L0,800 Z"
-        fill="rgba(147, 51, 234, 0.05)"
-      />
-    </svg>
+    
   </div>
 </template>
 
 <script setup>
+import { Icon } from "@iconify/vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
