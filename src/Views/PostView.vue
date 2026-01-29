@@ -16,7 +16,15 @@
       <Icon icon="eos-icons:loading" class="size-20" />
     </div>
 
-    <div v-if="error" class="text-center px-4 py-12 rounded-xl shadow-md">
+    <div v-else-if="!post" class="text-center px-4 py-12 rounded-xl shadow-md">
+      <Icon
+        icon="mdi:error"
+        class="w-full max-w-5xl h-16 m-auto text-red-500"
+      />
+      <p>This post doesn't have any content yet.</p>
+    </div>
+
+    <div v-else-if="error" class="text-center px-4 py-12 rounded-xl shadow-md">
       <Icon
         icon="mdi:error"
         class="w-full max-w-5xl h-16 m-auto text-red-500"
@@ -33,16 +41,8 @@
       </button>
     </div>
 
-    <div v-else-if="post" class="">
+    <div v-else class="">
       <PostDetail />
-    </div>
-
-    <div v-else class="text-center px-4 py-12 rounded-xl shadow-md">
-      <Icon
-        icon="mdi:error"
-        class="w-full max-w-5xl h-16 m-auto text-red-500"
-      />
-      <p>This post doesn't have any content yet.</p>
     </div>
   </div>
 </template>
